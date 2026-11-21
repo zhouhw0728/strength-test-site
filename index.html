@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="用 24 道生活化选择题，探索你的隐藏优势。结果只保存在当前设备中。"
+    />
+    <meta name="theme-color" content="#f3efe4" />
+    <title>一方 · 隐藏优势探索</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./questions.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <a class="brand" href="#" id="brandHome" aria-label="返回测试首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+        <span class="brand-name">一方</span>
+        <span class="brand-sub">SELF LAB</span>
+      </a>
+      <p class="header-note">一次向内的好奇</p>
+    </header>
+
+    <main id="main">
+      <section class="screen landing-screen" id="landingScreen" aria-labelledby="landingTitle">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> 隐藏优势探索</p>
+            <h1 id="landingTitle">
+              <span>你不是普通，</span>
+              <span>只是还没看见</span>
+              <em>自己的光。</em>
+            </h1>
+            <p class="hero-lede">
+              有些能力不写在简历里。它藏在你如何做选择、如何回应世界，
+              以及那些总让你不知不觉投入的小事中。
+            </p>
+            <div class="hero-actions">
+              <button class="button button-primary" id="startBtn" type="button">
+                开始探索
+                <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="button button-quiet" id="viewLastBtn" type="button" hidden>
+                查看上次结果
+              </button>
+            </div>
+            <p class="resume-note" id="resumeNote" aria-live="polite"></p>
+            <div class="test-facts" aria-label="测试信息">
+              <span><strong>24</strong> 道生活化选择</span>
+              <span><strong>8</strong> 种优势线索</span>
+              <span><strong>约 4</strong> 分钟</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="八种优势线索的视觉示意图">
+            <div class="visual-orbit">
+              <span class="orbit-label label-one">洞察</span>
+              <span class="orbit-label label-two">创造</span>
+              <span class="orbit-label label-three">共情</span>
+              <span class="orbit-label label-four">行动</span>
+              <span class="orbit-label label-five">探索</span>
+              <span class="orbit-label label-six">表达</span>
+              <span class="orbit-label label-seven">协作</span>
+              <span class="orbit-label label-eight">学习</span>
+              <div class="orbit-ring ring-outer"></div>
+              <div class="orbit-ring ring-inner"></div>
+              <div class="orbit-core">
+                <span>找找看</span>
+                <strong>你的<br />闪光方式</strong>
+              </div>
+              <span class="orbit-dot dot-one" aria-hidden="true"></span>
+              <span class="orbit-dot dot-two" aria-hidden="true"></span>
+              <span class="orbit-dot dot-three" aria-hidden="true"></span>
+            </div>
+            <p class="visual-caption">没有更好的性格，只有更适合你的用力方式。</p>
+          </div>
+        </div>
+
+        <section class="method-strip" aria-labelledby="methodTitle">
+          <div class="section-heading">
+            <p class="eyebrow"><span></span> 怎么理解这份结果</p>
+            <h2 id="methodTitle">它不是给你贴标签，<br />而是递来一张线索地图。</h2>
+          </div>
+          <div class="method-grid">
+            <article>
+              <span class="method-number">01</span>
+              <h3>选择你的第一反应</h3>
+              <p>不必寻找“正确答案”。越接近真实日常，结果越能提供有用的线索。</p>
+            </article>
+            <article>
+              <span class="method-number">02</span>
+              <h3>看见优势的组合</h3>
+              <p>八种优势不是互相竞争。它们一起构成你独特而变化的做事方式。</p>
+            </article>
+            <article>
+              <span class="method-number">03</span>
+              <h3>把它带回生活验证</h3>
+              <p>把结果当成探索起点：试着留意哪些活动让你更有能量、更愿意投入。</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="screen test-screen" id="testScreen" aria-labelledby="questionTitle" hidden>
+        <div class="test-meta">
+          <button class="text-button" id="exitTestBtn" type="button">← 暂存并退出</button>
+          <span>约 4 分钟 · 凭第一直觉</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-copy">
+            <span>探索进度</span>
+            <span id="progressCount">01 / 24</span>
+          </div>
+          <div
+            class="progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-label="测试进度"
+            aria-valuemin="0"
+            aria-valuemax="24"
+            aria-valuenow="1"
+          >
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <article class="question-card">
+          <div class="question-topline">
+            <span class="question-index" id="questionIndex">01</span>
+            <span class="question-kicker">如果你也在这个场景里</span>
+          </div>
+          <h2 id="questionTitle" aria-live="polite"></h2>
+          <p class="question-helper">哪个更像你会自然做出的选择？</p>
+          <div class="options" id="options" role="group" aria-labelledby="questionTitle"></div>
+
+          <div class="question-footer">
+            <button class="text-button" id="prevBtn" type="button">← 上一题</button>
+            <p class="keyboard-hint">可用数字键 1–4 选择</p>
+            <button class="button button-primary" id="nextBtn" type="button" disabled>
+              下一题
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="screen result-screen" id="resultScreen" aria-labelledby="resultTitle" hidden>
+        <p class="eyebrow result-eyebrow"><span></span> 你的探索结果</p>
+        <div class="result-heading">
+          <div>
+            <p class="result-lead">你正在用这样的方式，和世界发生联系</p>
+            <h1 id="resultTitle">你的优势光谱</h1>
+          </div>
+          <p class="result-date" id="resultDate"></p>
+        </div>
+
+        <article class="result-hero">
+          <div class="archetype-copy">
+            <span class="archetype-label">你的核心线索</span>
+            <h2 id="archetypeTitle"></h2>
+            <p class="archetype-subtitle" id="archetypeSubtitle"></p>
+            <p class="archetype-text" id="archetypeText"></p>
+            <div class="top-traits" id="topTraits" aria-label="最突出的三种优势"></div>
+          </div>
+          <div class="radar-wrap">
+            <div id="radarChart" aria-live="polite"></div>
+            <p class="radar-note">光点越靠近外圈，代表这种优势线索在你的选择中越常见。</p>
+          </div>
+        </article>
+
+        <section class="result-section" aria-labelledby="detailTitle">
+          <div class="result-section-head">
+            <p class="eyebrow"><span></span> 八种线索</p>
+            <h2 id="detailTitle">你的优势分布</h2>
+          </div>
+          <div class="dimension-grid" id="dimensionGrid"></div>
+        </section>
+
+        <section class="result-section insight-section" aria-labelledby="nextTitle">
+          <div class="result-section-head">
+            <p class="eyebrow"><span></span> 带回生活</p>
+            <h2 id="nextTitle">接下来，可以试试这些</h2>
+          </div>
+          <div class="action-list" id="actionList"></div>
+        </section>
+
+        <aside class="result-disclaimer">
+          <span aria-hidden="true">＊</span>
+          <p>
+            这是一份非诊断性的自我探索工具，不构成心理测评或职业建议。
+            优势会随经历与情境变化；结果更适合用来提出好问题，而不是定义你是谁。
+          </p>
+        </aside>
+
+        <div class="result-actions">
+          <button class="button button-primary" id="shareBtn" type="button">
+            分享结果摘要
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="button button-quiet" id="retakeBtn" type="button">重新探索</button>
+          <button class="text-button" id="resultHomeBtn" type="button">回到首页</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>一方 SELF LAB · 向内看看，再向外走</span>
+      <span>答案仅保存在你的设备中</span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
