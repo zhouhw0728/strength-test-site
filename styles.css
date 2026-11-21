@@ -239,6 +239,7 @@ a:focus-visible {
   border: 1px solid transparent;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
   transition:
     transform 180ms ease,
     background-color 180ms ease,
@@ -1043,6 +1044,100 @@ a:focus-visible {
   margin-top: 30px;
 }
 
+body.has-modal {
+  overflow: hidden;
+}
+
+.share-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  padding: 18px;
+  place-items: center;
+  background: rgba(15, 22, 20, 0.74);
+  backdrop-filter: blur(10px);
+}
+
+.share-dialog {
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 36px);
+  padding: 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.35);
+  animation: card-enter 220ms ease both;
+}
+
+.share-dialog-head {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.share-dialog-head .eyebrow {
+  margin-bottom: 8px;
+}
+
+.share-dialog h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+
+.modal-close {
+  display: grid;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 27px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--paper);
+}
+
+.share-image-frame {
+  overflow: hidden;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.share-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.share-hint {
+  margin: 13px 0 18px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.share-dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .toast {
   position: fixed;
   bottom: 24px;
@@ -1333,6 +1428,23 @@ a:focus-visible {
   .result-actions .button,
   .result-actions .text-button {
     width: 100%;
+  }
+
+  .share-modal {
+    padding: 10px;
+  }
+
+  .share-dialog {
+    max-height: calc(100dvh - 20px);
+    padding: 18px;
+  }
+
+  .share-dialog h2 {
+    font-size: 25px;
+  }
+
+  .share-dialog-actions {
+    grid-template-columns: 1fr;
   }
 
   .site-footer {
